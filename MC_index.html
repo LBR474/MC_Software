@@ -25,7 +25,7 @@
       gsap.to('.navDiv', {
         zIndex: -5,
       })
-      gsap.to('.MC_main', {
+      gsap.to('.MC_main, #container', {
         zIndex: -5,
       })
       switch (index) {
@@ -162,7 +162,7 @@
     <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> webgl - spotlight<br />
   </div> -->
   <div id="container">
-    <h1>this is the container div</h1>
+    <h1>Get things moving</h1>
 
   </div>
 
@@ -211,14 +211,25 @@
         scene.add(cube);
         scene.background = BG_color
 
-
+        // Set initial position off the left-hand edge
+        cube.position.x = -30;
         camera.position.z = 5;
 
         function animate() {
           requestAnimationFrame(animate);
 
+          // Move the cube across the screen
+          cube.position.x += 0.15; // Adjust speed as needed
+
+          // // Check if the cube has reached the right-hand edge of the screen
+          if (cube.position.x >= 17) {
+            return// Adjust speed as needed
+          }
+
+
           cube.rotation.x += 0.01;
           cube.rotation.y += 0.01;
+
 
           renderer.render(scene, camera);
         }
@@ -230,6 +241,7 @@
     opacity: 1,
     duration: 1,
     delay: 0,
+    
     ease: "power1.out",
     onComplete: () => {
       console.log("Container faded in");
@@ -263,12 +275,12 @@
                       });
                     }
                   });
-                }, 3000); // Wait 3 seconds before fading out threeShow
+                }, 5000); // Wait 3 seconds before fadifcontaing out threeShow
               }
             });
           }
         });
-      }, 3000); // Wait 3 seconds before fading out container
+      }, 1000); // Wait 3 seconds before fading out container
     }
   });
       function onWindowResize() {
