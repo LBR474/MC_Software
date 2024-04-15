@@ -212,17 +212,17 @@
         scene.background = BG_color
 
         // Set initial position off the left-hand edge
-        cube.position.x = -30;
+        cube.position.z = 130;
         camera.position.z = 5;
 
         function animate() {
           requestAnimationFrame(animate);
 
           // Move the cube across the screen
-          cube.position.x += 0.15; // Adjust speed as needed
+          cube.position.z -= 0.5; // Adjust speed as needed
 
           // // Check if the cube has reached the right-hand edge of the screen
-          if (cube.position.x >= 17) {
+          if (cube.position.z <= -170) {
             return// Adjust speed as needed
           }
 
