@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
   <link rel="stylesheet" href="./MC_index.css" />
+  <link rel="stylesheet" href="./form.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 
@@ -50,7 +51,7 @@
         case 2:
           gsap.to('#simulations', {
             opacity: 1,
-            width: '50%',
+            width: '70%',
             duration: 0.1,
             zIndex: 5,
 
@@ -71,6 +72,7 @@
           gsap.to('#contact', {
             opacity: 1,
             width: '50%',
+            height: '70%',
             duration: 0.1,
             zIndex: 5,
 
@@ -222,9 +224,9 @@
           cube.position.z -= 0.5; // Adjust speed as needed
 
           // // Check if the cube has reached the right-hand edge of the screen
-          if (cube.position.z <= -170) {
-            return// Adjust speed as needed
-          }
+          // if (cube.position.z <= -170) {
+          //   return// Adjust speed as needed
+          // }
 
 
           cube.rotation.x += 0.01;
@@ -236,53 +238,53 @@
 
         animate();
       }
-  // Use GSAP to fade in the container div
-  gsap.to("#container", {
-    opacity: 1,
-    duration: 1,
-    delay: 0,
-    
-    ease: "power1.out",
-    onComplete: () => {
-      console.log("Container faded in");
-      // After 3 seconds, fade out the container div
-      setTimeout(() => {
-        gsap.to("#container", {
-          opacity: 0,
-          duration: 1,
-          onComplete: () => {
-            console.log("Container faded out");
-            // After container fades out, fade in the threeShow div
-            gsap.to("#threeShow", {
-              opacity: 1,
+      // Use GSAP to fade in the container div
+      gsap.to("#container", {
+        opacity: 1,
+        duration: 1,
+        delay: 0,
+
+        ease: "power1.out",
+        onComplete: () => {
+          console.log("Container faded in");
+          // After 3 seconds, fade out the container div
+          setTimeout(() => {
+            gsap.to("#container", {
+              opacity: 0,
               duration: 1,
               onComplete: () => {
-                console.log("ThreeShow faded in");
-                // After 3 seconds, fade out the threeShow div
-                setTimeout(() => {
-                  gsap.to("#threeShow", {
-                    opacity: 0,
-                    duration: 1,
-                    onComplete: () => {
-                      console.log("ThreeShow faded out");
-                      // After threeShow fades out, fade in the penContent div
-                      gsap.to("#penContent", {
-                        opacity: 1,
+                console.log("Container faded out");
+                // After container fades out, fade in the threeShow div
+                gsap.to("#threeShow", {
+                  opacity: 1,
+                  duration: 1,
+                  onComplete: () => {
+                    console.log("ThreeShow faded in");
+                    // After 3 seconds, fade out the threeShow div
+                    setTimeout(() => {
+                      gsap.to("#threeShow", {
+                        opacity: 0,
                         duration: 1,
                         onComplete: () => {
-                          console.log("PenContent faded in");
+                          console.log("ThreeShow faded out");
+                          // After threeShow fades out, fade in the penContent div
+                          gsap.to("#penContent", {
+                            opacity: 1,
+                            duration: 1,
+                            onComplete: () => {
+                              console.log("PenContent faded in");
+                            }
+                          });
                         }
                       });
-                    }
-                  });
-                }, 5000); // Wait 3 seconds before fadifcontaing out threeShow
+                    }, 100); // Wait 3 seconds before fadifcontaing out threeShow
+                  }
+                });
               }
             });
-          }
-        });
-      }, 1000); // Wait 3 seconds before fading out container
-    }
-  });
+          }, 100); // Wait 3 seconds before fading out container
+        }
+      });
       function onWindowResize() {
 
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -379,7 +381,7 @@
         distributed applications development, inter-process messaging,
         third-party API integration, high-level architectural design,
         large-scale statistical analysis, .NET development. Check out a sample
-        of our <a href="#work">work</a>.
+        of our <a onclick="handleClick(1)" href="#work">work</a>.
       </p>
       <p>
         Roles: Applications/solutions/systems architect, technical team lead,
@@ -389,7 +391,7 @@
 
     <article id="work">
       <div class="close_X">
-        <a href="#" onclick="handleClickHide(1)">
+        <a href="#" onclick="handleClickHide(1);handleClickHide(0)">
 
           <h4> X </h4>
         </a>
@@ -440,15 +442,17 @@
           <h4> X </h4>
         </a>
       </div>
-      <header>Simulations</header>
+      <header>Tennis Match Simulations</header>
       <p>
-        MC Software Solutions is run by Misha Charrett. Misha has more than 30 years' experience as a quality software
-        engineer
-        building complex systems with high reliability. Specialising in message-based, distributed, multi-threaded
-        applications
-        (built using a microservices architectural framework), Misha has an exceptional ability to distil complex
-        multi-faceted
-        problems down to simpler component-based solutions.
+        How quickly can you simulate a tennis match by assigning each player a "known" winning serve percentage?
+
+        Well, if you try really hard, and use lookups and cram everything into the L1 cache, pretty darn fast!
+
+        I developed code that averages around 12 clock cycles per point (around 3 nanoseconds), and I performed 30
+        trillion
+        (that's 30,000,000,000,000) match simulations, in a week, for differing winning serve percentages and differing
+        "starting scores" for a standard 3-set match decided by a first-to-7 point tiebreaker (on a hosted server I
+        run).
       </p>
 
     </article>
@@ -471,32 +475,47 @@
       </p>
 
     </article>
-    <article id="contact">
-      <div class="close_X">
-        <a href="#" onclick="handleClickHide(4)">
+    <article id="contact"> <br>
+     
+      
+          <form method="get" action="test.aspx">
+            <div class="formHeader">
+              <p>Contact</p>
+              
+            </div>
+            <div class="field-group">
+              <div class="formName field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+              </div>
+              <div class="formEmail field">
+                <label for="email">Email</label> 
+                <input type="text" name="email" id="email">
+              </div>
+            </div>
+            <div class="formMessage">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="4"></textarea>
+            </div>
+            <div class="actions">
+              <input type="submit" value="Send Message" class="special">
+              <input type="reset" value="Reset">
+            </div>
+          </form>
 
-          <h4> X </h4>
-        </a>
-      </div>
-      <header>Contact</header>
-      <form method="get" action="test.aspx">
-        <div class="field half first">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name">
+          <div class="close_X"><a href="#" onclick="handleClickHide(4)">
+          
+              <h4> X </h4>
+            </a></div>
+
         </div>
-        <div class="field half">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email">
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea name="message" id="message" rows="4"></textarea>
-        </div>
-        <ul class="actions">
-          <li><input type="submit" value="Send Message" class="special"></li>
-          <li><input type="reset" value="Reset"></li>
-        </ul>
-      </form>
+        
+
+
+
+      
+
+
 
     </article>
 

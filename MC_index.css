@@ -27,9 +27,6 @@ body {
   font-family: "Lato-Light";
 }
 
-form {
-  font-family: "Lato-Thin"; ;
-}
 header {
   font-size: 3.2em;
 }
@@ -71,7 +68,7 @@ ul {
   list-style-type: none;
   margin: 0;
   /* padding: 20; */
-  /* overflow: hidden; 
+/* overflow: hidden; 
   background-color: transparent;
 } */
 
@@ -102,13 +99,13 @@ ul {
   text-align: justify;
   align-items: center;
   width: 100%;
-  
+
   display: flex; /* Add display flex */
   justify-content: center; /* Center content horizontally */
   font-family: "Lato-Light";
   /* border: 2px red solid; */
   margin-bottom: 250px;
-  font-size: 3.0em;
+  font-size: 3em;
   z-index: 6;
 }
 #contact {
@@ -118,7 +115,7 @@ ul {
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
   width: 0%;
-  height: fit-content;
+  min-height: 70%;
   transform: translate(
     -50%,
     -50%
@@ -132,6 +129,12 @@ ul {
   text-align: left;
   padding: 20px;
   z-index: -5;
+}
+
+#contact .close_X {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 #intro {
@@ -233,7 +236,9 @@ ul {
 
 .close_X {
   position: relative;
+
   float: right;
+
   margin-left: 10px;
   width: 10%;
   height: 10%;
@@ -243,30 +248,40 @@ ul {
   color: white;
 }
 
+/* 
+ */
+
+/* 
+ 
+ */
+
+/* 
+ 
+ 
+ */
 .MC_main {
   position: relative;
   text-align: justify;
   align-items: center;
   width: 95vw;
-  
+
   display: flex; /* Add display flex */
   justify-content: center; /* Center content horizontally */
   font-family: "Lato-Light";
-  
+
   margin-bottom: 250px;
-  font-size: 1.0em;
+  font-size: 1em;
   z-index: 6;
 }
-
 
 .navDiv {
   position: relative;
   width: 95vw;
   display: flex;
   justify-content: space-evenly;
-  
+
   font-family: "Lato-Light";
-  
+
   /* border: 2px aqua solid; */
   margin-top: 20px;
   font-size: 0.4em;
@@ -279,7 +294,7 @@ ul {
   width: 20%;
   text-align: center; /* Align content center */
   color: white;
-  
+
   border: 0.5px white solid;
   padding: 8px 12px; /* Adjust padding as desired */
 }

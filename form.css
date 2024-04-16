@@ -1,0 +1,141 @@
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(27, 31, 34);
+  color: white;
+  width: 90%;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 2em;
+
+  margin-bottom: 10px; /* Remove margin around the <p> element */
+  padding: 0; /* Remove padding as well */
+}
+
+.formHeader p {
+  margin: 0; /* Remove margin around the <p> element */
+  padding: 0; /* Remove padding as well */
+  text-decoration: NONE;
+  text-decoration-color: white; /* Set the color of the underline */
+  text-decoration-style: solid; /* Set the style of the underline */
+  text-decoration-thickness: 2.7px; /* Set the thickness of the underline */
+  text-underline-offset: 0.3em; /* Increase the distance between text and underline */
+}
+.field-group {
+  display: flex;
+  flex-direction: row; /* Arrange items in a column */
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.formName,
+.formEmail {
+  display: flex;
+  flex-direction: column; /* Arrange label and input in a column */
+  width: 45%;
+}
+
+.formName label {
+  order: -1; /* Move the label above the input */
+  margin-bottom: 25px;
+}
+.formEmail label {
+  /* Move the label above the input */
+  margin-bottom: 25px;
+}
+
+.formEmail {
+  margin-left: auto; /* Float to the right */
+}
+
+.formName input[type="text"],
+.formEmail input[type="text"] {
+  background-color: rgba(27, 31, 34);
+  color: white;
+  border: 0.5px white solid;
+  height: 2em;
+}
+
+.formMessage textarea {
+  background-color: rgba(27, 31, 34);
+  color: white;
+  border: 0.5px white solid;
+  height: 10em;
+}
+
+.formMessage {
+  display: flex;
+  flex-direction: column; /* Arrange label and input in a column */
+  justify-content: space-evenly;
+  width: 100%;
+  height: 40%;
+}
+
+.actions {
+ display: flex;
+  flex-direction: row; /* Arrange items in a column */
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+input[type="submit"] {
+   
+    background-color: #ffffff ;
+    border-radius: 4px;
+    border: 0;
+    box-shadow:  0 0 0 1px #000000;
+    color: #000000 ;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    height: 2.75rem;
+    letter-spacing: 0.2rem;
+    line-height: 2.75rem;
+    outline: 0;
+    padding: 0 1.25rem 0 1.35rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+input[type="reset"] {
+   
+    background-color: transparent;
+    border-radius: 4px;
+    border: 0;
+    box-shadow: inset 0 0 0 1px #000000;
+    color: #ffffff ;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    height: 2.75rem;
+    letter-spacing: 0.2rem;
+    line-height: 2.75rem;
+    outline: 0;
+    padding: 0 1.25rem 0 1.35rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+/* Add box shadow on hover for submit and reset buttons */
+.actions input[type="submit"]:hover {
+  box-shadow: 0px 0px 15px rgba(150, 150, 150, 0.5); /* Add box shadow */
+  background-color: lightgrey;
+}
+
+.actions input[type="reset"]:hover {
+  box-shadow: 0px 0px 5px rgba(255, 254, 254, 0.5); /* Add box shadow */
+}
