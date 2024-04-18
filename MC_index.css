@@ -142,6 +142,7 @@ ul {
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
   width: 0%;
+  
   height: fit-content;
   transform: translate(
     -50%,
@@ -157,6 +158,8 @@ ul {
   padding: 20px;
   z-index: -5;
 }
+
+
 
 #penContent {
   position: absolute;
@@ -216,7 +219,8 @@ ul {
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
   width: 0%;
-  height: fit-content;
+  overflow-y: auto; /* Add vertical scroll if content overflows */
+  max-height: calc(100vh - 200px);
   transform: translate(
     -50%,
     -50%
@@ -297,17 +301,13 @@ ul {
 
   border: 0.5px white solid;
   padding: 8px 12px; /* Adjust padding as desired */
+  cursor: pointer; /* Change cursor to pointer to indicate clickable */
 }
 
 .navDiv > div:hover {
   background-color: rgba(80, 80, 80, 0.601);
 }
 
-.navDiv > div > a {
-  margin-top: 0.5px;
-  color: white;
-  text-decoration: none;
-}
 
 .new-content {
   position: absolute;

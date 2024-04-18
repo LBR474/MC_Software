@@ -37,12 +37,22 @@
             duration: 0.1,
             zIndex: 5,
           })
+          gsap.to('#introImg', {
+            opacity: 1,
+            width: '100%',
+            duration: 0.1,
+            zIndex: 5,
+          })
+          
 
           break;
         case 1:
           gsap.to('#work', {
             opacity: 1,
             width: '50%',
+            height: 'calc(100vh - 200px)',
+            overflowY: 'auto', /* Add vertical scroll if content overflows */
+            paddingBottom: '20px',
             duration: 0.1,
             zIndex: 5,
           })
@@ -55,6 +65,12 @@
             duration: 0.1,
             zIndex: 5,
 
+          })
+          gsap.to('#introImg', {
+            opacity: 1,
+            width: '100%',
+            duration: 0.1,
+            zIndex: 5,
           })
 
           break;
@@ -277,7 +293,7 @@
                           });
                         }
                       });
-                    }, 5000); // Wait 3 seconds before fadifcontaing out threeShow
+                    }, 2000); // Wait 3 seconds before fadifcontaing out threeShow
                   }
                 });
               }
@@ -317,50 +333,22 @@
       distributed-application programming needs
     </div>
     <div class="navDiv">
-      <div><a onclick="handleClick(0)" href="#intro">
+      <div onclick="handleClick(0)"> 
           Intro
-        </a></div>
-      <div><a onclick="handleClick(1)" href="#work">
+        </div>
+      <div onclick="handleClick(1)">
           Work
-        </a></div>
-      <div><a onclick="handleClick(2)" href="#simulations">
+       </div>
+      <div onclick="handleClick(2)">
           Simulations
-        </a></div>
-      <div><a onclick="handleClick(3)" href="#about">
+        </div>
+      <div onclick="handleClick(3)">
           About
-        </a></div>
-      <div><a onclick="handleClick(4)" href="#contact">
+        </div>
+      <div onclick="handleClick(4)">
           Contact
-        </a></div>
-      <!-- <nav>
-          <ul>
-            <li>
-              <a onclick="handleClick(0)" href="#intro">
-                Intro
-              </a>
-            </li>
-            <li>
-              <a onclick="handleClick(1)" href="#work">
-                Work
-              </a>
-            </li>
-            <li>
-              <a onclick="handleClick(2)" href="#simulations">
-                Simulations
-              </a>
-            </li>
-            <li>
-              <a onclick="handleClick(3)" href="#about">
-                About
-              </a>
-            </li>
-            <li>
-              <a onclick="handleClick(4)" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav> -->
+       </div>
+
     </div>
 
     <article id="intro">
@@ -371,6 +359,7 @@
         </a>
       </div>
       <header>Intro</header>
+      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
       <p>
         Bespoke software solutions provider/software architecture consultancy
         for the corporate sector. Builder of quality, redundant, scalable,
@@ -397,6 +386,7 @@
         </a>
       </div>
       <header>Work</header>
+      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
       <p>
         Responsible for the architecture, design, development, deployment, and
         support of a distributed automated low-latency exchange horse racing
@@ -443,10 +433,11 @@
         </a>
       </div>
       <header>Tennis Match Simulations</header>
+      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
       <p>
-        How quickly can you simulate a tennis match by assigning each player a "known" winning serve percentage?
+        How quickly can you simulate a tennis match by assigning each player a "known" winning serve percentage? <br>
 
-        Well, if you try really hard, and use lookups and cram everything into the L1 cache, pretty darn fast!
+        Well, if you try really hard, and use lookups and cram everything into the L1 cache, pretty darn fast! <br>
 
         I developed code that averages around 12 clock cycles per point (around 3 nanoseconds), and I performed 30
         trillion
@@ -464,6 +455,7 @@
         </a>
       </div>
       <header>About</header>
+      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
       <p>
         MC Software Solutions is run by Misha Charrett. Misha has more than 30 years' experience as a quality software
         engineer
