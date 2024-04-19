@@ -43,7 +43,14 @@
             duration: 0.1,
             zIndex: 5,
           })
-          
+          gsap.to('#introThreeAnimation', {
+            opacity: 1,
+            // width: '700px',
+            //height: '200px',
+            duration: 0.1,
+            zIndex: 5,
+          })
+
 
           break;
         case 1:
@@ -191,69 +198,69 @@
     <!-- <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script> -->
 
 
-
+    <script type="module" src="three_scripts/main.js"></script>
     <script type="module">
 
-      import * as THREE from 'three';
+      // import * as THREE from 'three';
 
 
 
-      import { GUI } from 'https://unpkg.com/three@0.138.3/examples/jsm/libs/lil-gui.module.min.js';
+      // import { GUI } from 'https://unpkg.com/three@0.138.3/examples/jsm/libs/lil-gui.module.min.js';
 
-      import { PLYLoader } from 'https://unpkg.com/three@0.138.3/examples/jsm/loaders/PLYLoader.js';
-      import { OrbitControls } from 'https://unpkg.com/three@0.138.3/examples/jsm/controls/OrbitControls.js';
+      // import { PLYLoader } from 'https://unpkg.com/three@0.138.3/examples/jsm/loaders/PLYLoader.js';
+      // import { OrbitControls } from 'https://unpkg.com/three@0.138.3/examples/jsm/controls/OrbitControls.js';
 
-      let renderer, scene, camera;
+      // let renderer, scene, camera;
 
-      let spotLight, lightHelper;
-
-
-
-      init();
-
-      function init() {
+      // let spotLight, lightHelper;
 
 
-        const scene = new THREE.Scene();
-        let BG_color = new THREE.Color(0x000000)
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        //document.body.appendChild(renderer.domElement);
-        document.querySelector('#threeShow').appendChild(renderer.domElement);
+      // init();
 
-        const geometry = new THREE.BoxGeometry(1, 1, 1);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-        scene.background = BG_color
-
-        // Set initial position off the left-hand edge
-        cube.position.z = 130;
-        camera.position.z = 5;
-
-        function animate() {
-          requestAnimationFrame(animate);
-
-          // Move the cube across the screen
-          cube.position.z -= 0.5; // Adjust speed as needed
-
-          // // Check if the cube has reached the right-hand edge of the screen
-          // if (cube.position.z <= -170) {
-          //   return// Adjust speed as needed
-          // }
+      // function init() {
 
 
-          cube.rotation.x += 0.01;
-          cube.rotation.y += 0.01;
+      //   const scene = new THREE.Scene();
+      //   let BG_color = new THREE.Color(0x000000)
+      //   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+      //   const renderer = new THREE.WebGLRenderer();
+      //   renderer.setSize(window.innerWidth, window.innerHeight);
+      //   //document.body.appendChild(renderer.domElement);
+      //   document.querySelector('#threeShow').appendChild(renderer.domElement);
+
+      //   const geometry = new THREE.BoxGeometry(1, 1, 1);
+      //   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+      //   const cube = new THREE.Mesh(geometry, material);
+      //   scene.add(cube);
+      //   scene.background = BG_color
+
+      //   // Set initial position off the left-hand edge
+      //   cube.position.z = 130;
+      //   camera.position.z = 5;
+
+      //   function animate() {
+      //     requestAnimationFrame(animate);
+
+      //     // Move the cube across the screen
+      //     cube.position.z -= 0.5; // Adjust speed as needed
+
+      //     // // Check if the cube has reached the right-hand edge of the screen
+      //     // if (cube.position.z <= -170) {
+      //     //   return// Adjust speed as needed
+      //     // }
 
 
-          renderer.render(scene, camera);
-        }
+      //     cube.rotation.x += 0.01;
+      //     cube.rotation.y += 0.01;
 
-        animate();
-      }
+
+      //     renderer.render(scene, camera);
+      //   }
+
+      //   animate();
+      // }
       // Use GSAP to fade in the container div
       gsap.to("#container", {
         opacity: 1,
@@ -333,21 +340,21 @@
       distributed-application programming needs
     </div>
     <div class="navDiv">
-      <div onclick="handleClick(0)"> 
-          Intro
-        </div>
+      <div onclick="handleClick(0)">
+        Intro
+      </div>
       <div onclick="handleClick(1)">
-          Work
-       </div>
+        Work
+      </div>
       <div onclick="handleClick(2)">
-          Simulations
-        </div>
+        Simulations
+      </div>
       <div onclick="handleClick(3)">
-          About
-        </div>
+        About
+      </div>
       <div onclick="handleClick(4)">
-          Contact
-       </div>
+        Contact
+      </div>
 
     </div>
 
@@ -359,7 +366,8 @@
         </a>
       </div>
       <header>Intro</header>
-      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
+      <div id="introThreeAnimation"></div>
+      <p><script type="module" src="three_scripts/introAnimation.js"></script></p>
       <p>
         Bespoke software solutions provider/software architecture consultancy
         for the corporate sector. Builder of quality, redundant, scalable,
@@ -468,48 +476,48 @@
 
     </article>
     <article id="contact"> <br>
-     
-      
-          <form method="get" action="test.aspx">
-            <div class="formHeader">
-              <p>Contact</p>
-              
-            </div>
-            <div class="field-group">
-              <div class="formName field">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name">
-              </div>
-              <div class="formEmail field">
-                <label for="email">Email</label> 
-                <input type="text" name="email" id="email">
-              </div>
-            </div>
-            <div class="formMessage">
-              <label for="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
-            </div>
-            <div class="actions">
-              <input type="submit" value="Send Message" class="special">
-              <input type="reset" value="Reset">
-            </div>
-          </form>
 
-          <div class="close_X"><a href="#" onclick="handleClickHide(4)">
-          
-              <h4> X </h4>
-            </a></div>
+
+      <form method="get" action="test.aspx">
+        <div class="formHeader">
+          <p>Contact</p>
 
         </div>
-        
+        <div class="field-group">
+          <div class="formName field">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+          </div>
+          <div class="formEmail field">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+          </div>
+        </div>
+        <div class="formMessage">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="4"></textarea>
+        </div>
+        <div class="actions">
+          <input type="submit" value="Send Message" class="special">
+          <input type="reset" value="Reset">
+        </div>
+      </form>
+
+      <div class="close_X"><a href="#" onclick="handleClickHide(4)">
+
+          <h4> X </h4>
+        </a></div>
+
+  </div>
 
 
 
-      
 
 
 
-    </article>
+
+
+  </article>
 
   </div>
   </div>

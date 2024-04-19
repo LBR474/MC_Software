@@ -141,7 +141,7 @@ ul {
   position: fixed;
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
-  width: 0%;
+  width: 50%;
   
   height: fit-content;
   transform: translate(
@@ -157,6 +157,12 @@ ul {
   text-align: left;
   padding: 20px;
   z-index: -5;
+}
+
+#introThreeAnimation {
+  width: 100%;
+  
+  min-height: 400px; /* Limit maximum height if needed */
 }
 
 
@@ -342,6 +348,16 @@ ul {
   .navDiv > div {
     width: 80%; /* Adjust width for smaller screens */
     margin: 5px; /* Add some margin between divs */
+  }
+
+   #introThreeAnimation {
+    width: 100%;
+    height: auto; /* Set height to auto */
+    max-height: 300px; /* Limit maximum height for smaller screens */
+  }
+  #introThreeAnimation canvas {
+    width: 50%;
+    
   }
 
   #work {
