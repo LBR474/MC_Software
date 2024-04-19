@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#threeShow").appendChild(renderer.domElement);
 
   const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+  const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
   const cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
   scene.background = BG_color;

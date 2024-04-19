@@ -33,20 +33,6 @@
         case 0:
           gsap.to('#intro', {
             opacity: 1,
-            width: '50%',
-            duration: 0.1,
-            zIndex: 5,
-          })
-          gsap.to('#introImg', {
-            opacity: 1,
-            width: '100%',
-            duration: 0.1,
-            zIndex: 5,
-          })
-          gsap.to('#introThreeAnimation', {
-            opacity: 1,
-            // width: '700px',
-            //height: '200px',
             duration: 0.1,
             zIndex: 5,
           })
@@ -56,7 +42,6 @@
         case 1:
           gsap.to('#work', {
             opacity: 1,
-            width: '50%',
             height: 'calc(100vh - 200px)',
             overflowY: 'auto', /* Add vertical scroll if content overflows */
             paddingBottom: '20px',
@@ -64,27 +49,27 @@
             zIndex: 5,
           })
 
+          gsap.to('#intro', {
+            opacity: 0,
+            duration: 0.1,
+            zIndex: -5,
+          })
+
           break;
         case 2:
           gsap.to('#simulations', {
             opacity: 1,
-            width: '70%',
             duration: 0.1,
             zIndex: 5,
 
           })
-          gsap.to('#introImg', {
-            opacity: 1,
-            width: '100%',
-            duration: 0.1,
-            zIndex: 5,
-          })
+
 
           break;
         case 3:
           gsap.to('#about', {
             opacity: 1,
-            width: '50%',
+
             duration: 0.1,
             zIndex: 5,
 
@@ -121,7 +106,8 @@
         case 0:
           gsap.to('#intro', {
             opacity: 0,
-            width: '0%',
+            zIndex: -5,
+
             duration: 0.1
 
           })
@@ -130,7 +116,7 @@
         case 1:
           gsap.to('#work', {
             opacity: 0,
-            width: '0%',
+            zIndex: -5,
             duration: 0.1
 
           })
@@ -139,9 +125,9 @@
         case 2:
           gsap.to('#simulations', {
             opacity: 0,
-            width: '0%',
-            duration: 0.1,
             zIndex: -5,
+            duration: 0.1,
+
 
 
           })
@@ -150,9 +136,9 @@
         case 3:
           gsap.to('#about', {
             opacity: 0,
-            width: '0%',
-            duration: 0.1,
             zIndex: -5,
+            duration: 0.1,
+
 
           })
 
@@ -160,9 +146,9 @@
         case 4:
           gsap.to('#contact', {
             opacity: 0,
-            width: '0%',
-            duration: 0.1,
             zIndex: -5,
+            duration: 0.1,
+
 
           })
 
@@ -183,9 +169,7 @@
 
 <body>
 
-  <!-- <div id="info">
-    <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> webgl - spotlight<br />
-  </div> -->
+ 
   <div id="container">
     <h1>Get things moving</h1>
 
@@ -201,66 +185,6 @@
     <script type="module" src="three_scripts/main.js"></script>
     <script type="module">
 
-      // import * as THREE from 'three';
-
-
-
-      // import { GUI } from 'https://unpkg.com/three@0.138.3/examples/jsm/libs/lil-gui.module.min.js';
-
-      // import { PLYLoader } from 'https://unpkg.com/three@0.138.3/examples/jsm/loaders/PLYLoader.js';
-      // import { OrbitControls } from 'https://unpkg.com/three@0.138.3/examples/jsm/controls/OrbitControls.js';
-
-      // let renderer, scene, camera;
-
-      // let spotLight, lightHelper;
-
-
-
-      // init();
-
-      // function init() {
-
-
-      //   const scene = new THREE.Scene();
-      //   let BG_color = new THREE.Color(0x000000)
-      //   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-      //   const renderer = new THREE.WebGLRenderer();
-      //   renderer.setSize(window.innerWidth, window.innerHeight);
-      //   //document.body.appendChild(renderer.domElement);
-      //   document.querySelector('#threeShow').appendChild(renderer.domElement);
-
-      //   const geometry = new THREE.BoxGeometry(1, 1, 1);
-      //   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-      //   const cube = new THREE.Mesh(geometry, material);
-      //   scene.add(cube);
-      //   scene.background = BG_color
-
-      //   // Set initial position off the left-hand edge
-      //   cube.position.z = 130;
-      //   camera.position.z = 5;
-
-      //   function animate() {
-      //     requestAnimationFrame(animate);
-
-      //     // Move the cube across the screen
-      //     cube.position.z -= 0.5; // Adjust speed as needed
-
-      //     // // Check if the cube has reached the right-hand edge of the screen
-      //     // if (cube.position.z <= -170) {
-      //     //   return// Adjust speed as needed
-      //     // }
-
-
-      //     cube.rotation.x += 0.01;
-      //     cube.rotation.y += 0.01;
-
-
-      //     renderer.render(scene, camera);
-      //   }
-
-      //   animate();
-      // }
       // Use GSAP to fade in the container div
       gsap.to("#container", {
         opacity: 1,
@@ -366,8 +290,10 @@
         </a>
       </div>
       <header>Intro</header>
-      <div id="introThreeAnimation"></div>
-      <p><script type="module" src="three_scripts/introAnimation.js"></script></p>
+      <div id="introThreeAnimation" class="articleThreeAnimation"></div>
+      <p>
+        <script type="module" src="three_scripts/introAnimation.js"></script>
+      </p>
       <p>
         Bespoke software solutions provider/software architecture consultancy
         for the corporate sector. Builder of quality, redundant, scalable,
@@ -388,13 +314,18 @@
 
     <article id="work">
       <div class="close_X">
-        <a href="#" onclick="handleClickHide(1);handleClickHide(0)">
+        <a href="#" onclick="handleClickHide(1)">
 
           <h4> X </h4>
         </a>
       </div>
       <header>Work</header>
-      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
+      <div id="workThreeAnimation" class="articleThreeAnimation"></div>
+      <p>
+        <script type="module" src="three_scripts/workAnimation.js"></script>
+      </p>
+
+
       <p>
         Responsible for the architecture, design, development, deployment, and
         support of a distributed automated low-latency exchange horse racing
@@ -441,7 +372,10 @@
         </a>
       </div>
       <header>Tennis Match Simulations</header>
-      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
+      <div id="simulationsThreeAnimation" class="articleThreeAnimation"></div>
+      <p>
+        <script type="module" src="three_scripts/simulationsAnimation.js"></script>
+      </p>
       <p>
         How quickly can you simulate a tennis match by assigning each player a "known" winning serve percentage? <br>
 
@@ -463,7 +397,10 @@
         </a>
       </div>
       <header>About</header>
-      <p><img id="introImg" src="./assets/pic01.jpg" alt=""></p>
+      <div id="aboutThreeAnimation" class="articleThreeAnimation"></div>
+      <p>
+        <script type="module" src="three_scripts/aboutAnimation.js"></script>
+      </p>
       <p>
         MC Software Solutions is run by Misha Charrett. Misha has more than 30 years' experience as a quality software
         engineer

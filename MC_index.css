@@ -31,53 +31,12 @@ header {
   font-size: 3.2em;
 }
 
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-} */
-/* 
-input {
-  width: 80%;
-}
-
-li {
-  float: left;
-  width: 25%; /* Set a specific width based on the longest word 
-  border: 0.5px white solid;
-  padding: 15px;
-  margin: 15px;
-  /* margin-left: 2%; 
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #d6d5d5;
-}
-
-ul {
-  width: 100%;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  /* padding: 20; */
-/* overflow: hidden; 
-  background-color: transparent;
-} */
-
 /*  ID hash tags elements */
 #about {
   position: fixed;
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
-  width: 0%;
+  width: calc(50vw - 50px);
   height: fit-content;
   transform: translate(
     -50%,
@@ -114,7 +73,7 @@ ul {
   position: fixed;
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
-  width: 0%;
+  width: calc(50vw - 50px);
   min-height: 70%;
   transform: translate(
     -50%,
@@ -141,8 +100,8 @@ ul {
   position: fixed;
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
-  width: 50%;
-  
+  width: calc(50vw - 50px);
+
   height: fit-content;
   transform: translate(
     -50%,
@@ -158,14 +117,6 @@ ul {
   padding: 20px;
   z-index: -5;
 }
-
-#introThreeAnimation {
-  width: 100%;
-  
-  min-height: 400px; /* Limit maximum height if needed */
-}
-
-
 
 #penContent {
   position: absolute;
@@ -191,7 +142,7 @@ ul {
   position: fixed;
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
-  width: 0%;
+  width: calc(50vw - 50px);
   height: fit-content;
   transform: translate(
     -50%,
@@ -224,7 +175,7 @@ ul {
   position: fixed;
   top: 50%; /* Position the top edge of the element at the vertical center */
   left: 50%; /* Position the left edge of the element at the horizontal center */
-  width: 0%;
+  width: calc(50vw - 50px);
   overflow-y: auto; /* Add vertical scroll if content overflows */
   max-height: calc(100vh - 200px);
   transform: translate(
@@ -269,6 +220,13 @@ ul {
  
  
  */
+
+.articleThreeAnimation {
+  width: 100%;
+  min-width: 400px;
+
+  min-height: 400px; /* Limit maximum height if needed */
+}
 .MC_main {
   position: relative;
   text-align: justify;
@@ -314,7 +272,6 @@ ul {
   background-color: rgba(80, 80, 80, 0.601);
 }
 
-
 .new-content {
   position: absolute;
   top: 0px;
@@ -350,14 +307,13 @@ ul {
     margin: 5px; /* Add some margin between divs */
   }
 
-   #introThreeAnimation {
+  #introThreeAnimation {
     width: 100%;
     height: auto; /* Set height to auto */
     max-height: 300px; /* Limit maximum height for smaller screens */
   }
   #introThreeAnimation canvas {
     width: 50%;
-    
   }
 
   #work {

@@ -62,8 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
  function onWindowResize() {
-   if (window.innerWidth < 1200) {
-     // Adjust the canvas size and camera aspect ratio
+ 
      camera.aspect =
        introThreeAnimation.offsetWidth / introThreeAnimation.offsetHeight;
      camera.updateProjectionMatrix();
@@ -72,12 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
        introThreeAnimation.offsetHeight
      );
      introThreeAnimation.style.height = `${renderer.domElement.clientHeight}px`;
-   } else {
-     // Reset to original aspect ratio
-     camera.aspect = 75;
-     camera.updateProjectionMatrix();
-     renderer.setSize(window.innerWidth, window.innerHeight);
-   }
+  
  }
 
  setup();
