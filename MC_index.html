@@ -11,14 +11,18 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+
   <script type="importmap">
-  			{
-  				"imports": {
-  					"three": "https://unpkg.com/three@0.138.3/build/three.module.js"
-  					
-  				}
-  			}
-  		</script>
+      {
+          "imports": {
+              "three": "https://unpkg.com/three@0.138.3/build/three.module.js",
+              "three/examples/jsm/loaders/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@0.138.3/examples/jsm/loaders/GLTFLoader.js"
+          }
+      }
+  </script>
+
 
   <script>
     function handleClick(index) {
@@ -169,7 +173,7 @@
 
 <body>
 
- 
+
   <div id="container">
     <h1>Get things moving</h1>
 
@@ -183,6 +187,7 @@
 
 
     <script type="module" src="three_scripts/main.js"></script>
+    <script type="module" src="three_scripts/gltf_only.js"></script>
     <script type="module">
 
       // Use GSAP to fade in the container div
@@ -260,9 +265,11 @@
 
   <div id="penContent">
     <div class="MC_main">
+      <div class="gltfContent"></div>
       MC Software Solutions - for all your secure-software,
       distributed-application programming needs
     </div>
+    
     <div class="navDiv">
       <div onclick="handleClick(0)">
         Intro
@@ -412,10 +419,16 @@
       </p>
 
     </article>
-    <article id="contact"> <br>
+    <article id="contact"> 
+      <div class="close_X">
+        <a href="#" onclick="handleClickHide(4)">
+      
+          <h4> X </h4>
+        </a>
+      </div>
+      <!-- action="test.aspx" -->
 
-
-      <form method="get" action="test.aspx">
+      <form id="contactForm" method="get" action="test.aspx">
         <div class="formHeader">
           <p>Contact</p>
 
@@ -440,10 +453,7 @@
         </div>
       </form>
 
-      <div class="close_X"><a href="#" onclick="handleClickHide(4)">
-
-          <h4> X </h4>
-        </a></div>
+     
 
   </div>
 

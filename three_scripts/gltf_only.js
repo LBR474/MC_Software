@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inside this function, the DOM content is fully loaded
   const scene = new THREE.Scene();
   let BG_color = new THREE.Color(0x000000);
+  let protector
   const camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -17,26 +18,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
-  document.querySelector("#threeShow").appendChild(renderer.domElement);
+  document.querySelector(".gltfContent").appendChild(renderer.domElement);
 
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
-  scene.background = BG_color;
-
-  cube.position.z = 130;
+  
   camera.position.z = 5;
 
 
+  const loader = new GLTFLoader();
+
+  loader.load(
+    "assets/Protector11.glb",
+    function (gltf) {
+      scene.add(gltf.scene);
+      protector = gltf.scene
+      protector.position.z = -50;
+    },
+    undefined,
+    function (error) {
+      console.error(error);
+    }
+  );
+
   
+
   function animate() {
     requestAnimationFrame(animate);
 
-    cube.position.z -= 0.5;
+     
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    // cube.rotation.x += 0.01;
+    // cube.rotation.y += 0.01;
 
     renderer.render(scene, camera);
   }

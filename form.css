@@ -4,6 +4,7 @@ form {
   background-color: rgba(27, 31, 34);
   color: white;
   width: 90%;
+  
 }
 
 .formHeader {
@@ -67,6 +68,7 @@ form {
   color: white;
   border: 0.5px white solid;
   height: 10em;
+  margin-bottom: 50px;
 }
 
 .formMessage {
