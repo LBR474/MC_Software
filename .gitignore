@@ -1,3 +1,5 @@
 # my ignores
 
 storage.txt
+
+/node_modules
